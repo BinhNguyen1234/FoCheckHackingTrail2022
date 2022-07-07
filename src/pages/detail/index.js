@@ -20,8 +20,6 @@ Page({
     product_id: "",
     product: {},
     relativeProducts: [],
-    productFoCheck: {},
-    relativeProductsFoCheck: [],
     type: "color",
     colorSelected: {
       id: "",
@@ -115,23 +113,15 @@ Page({
     });
 
     try {
-      const [product, relativeProducts] = await Promise.all([
-        getDetailProduct(this.data.product_id),
-        getRelativeProductsAPI(),
-      ]);
-
-      const productFoCheck = await getDetailProductFocheck(this.data.product_id)
-      console.log(productFoCheck)
-      const relativeProductsFoCheck = await getRelatedDetailProductFocheck(this.data.product_id)
+      const product = await getDetailProductFocheck(this.data.product_id)
+      const relativeProducts = await getRelatedDetailProductFocheck(this.data.product_id)
 
       this.setData({
         product,
         relativeProducts,
-        productFoCheck,
-        relativeProductsFoCheck,
         isLoading: false,
-        colorSelected: product.colors[0],
-        sizeSelected: product.sizes[0],
+        colorSelected: '#72eb2e',
+        sizeSelected: '30px',
       });
     } catch (error) {
       this.setData({

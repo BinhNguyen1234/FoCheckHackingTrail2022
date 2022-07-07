@@ -30,12 +30,20 @@
         description="{{sizeSelected.size}}"/>
     </view>
   </view>
+
+  <view class="p-medium bg-white mb-2x-small">
+    <image
+        onLoad="onLoad"
+        src="{{product.image}}"
+        class="image-item" />
+  </view>
+  
   <view class="p-medium bg-white mb-2x-small">
     <shipping-info isLoading="{{isLoading}}" />
   </view>
   <view class="p-medium bg-white mb-2x-small">
     <detail-info 
-      detail="{{product.detail}}"
+      detail="{{product}}"
       isLoading="{{isLoading}}" />
   </view>
 
