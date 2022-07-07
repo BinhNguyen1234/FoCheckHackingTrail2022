@@ -1,6 +1,9 @@
 import request, { fakeRequest } from "./request";
-import nearAeraProduct from './mock/near-aera-products.json';
-import favoritesProduct from './mock/favorite-products.json';
+import nearAeraProduct from "./mock/near-aera-products.json";
+import favoritesProduct from "./mock/favorite-products.json";
+import banners from "./mock/banners.json";
+import product from "./mock/productsFocheck.json";
+import { removeAccents } from "../utils/common";
 
 export const getShopInfoAPI = () => {
   return request({ path: "/shop" });
@@ -73,6 +76,8 @@ export const getMyPoint = () => {
 };
 
 export const getBannersAPI = () => {
+  // const data = request({ path: "/banners" });
+  return banners;
   return request({ path: "/banners" });
 };
 
@@ -163,11 +168,26 @@ export const getRelativeProductsAPI = () => {
 };
 
 export const getFavoritesProductAPI = () => {
-  return favoritesProduct
+  return favoritesProduct;
   // return request({ path: "/favorite-products" });
 };
 
 export const getProductNearYourAeraAPI = () => {
-  return nearAeraProduct
+  return nearAeraProduct;
   // return request({ path: "/near-aera-products" });
 };
+
+export const getDetailProductFocheck = async (productId) => {
+  const data = product;
+  const pdb = data.find((p) => p.id == productId);
+  const pdRelate = data.find((p) =>
+    removeAccents(p.category).includes(removeAccents(productId))
+  );
+
+  const result = {
+    ...pdb,
+    ...pdRelate,
+  };
+  return result;
+};
+

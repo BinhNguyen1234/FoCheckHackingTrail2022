@@ -57,14 +57,14 @@
         type="outline"
         onTap="addToCart"
       >
-        Add to cart
+        Add to Favorites
       </button>
       <button
         class="w-50 ml-2x-small"
         shape="pill"
         onTap="addAndGoToCart"
       >
-        Buy now
+        Liên hệ
       </button>
     </view>
   </view>
