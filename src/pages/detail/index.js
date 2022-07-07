@@ -1,4 +1,4 @@
-import { getDetailProduct, getRelativeProductsAPI } from '../../services/index';
+import { getDetailProduct, getRelativeProductsAPI, getRelatedDetailProductFocheck, getDetailProductFocheck} from '../../services/index';
 import {
   navigateToPDP,
   navigateToCart,
@@ -15,6 +15,8 @@ Page({
     product_id: '',
     product: {},
     relativeProducts: [],
+    productFoCheck: {},
+    relativeProductsFoCheck: [],
     type: 'color',
     colorSelected: {
       id: '',
@@ -113,13 +115,21 @@ Page({
         getRelativeProductsAPI(),
       ]);
 
+      const [productFoCheck, relativeProductsFoCheck] = await Promise.all([
+        getDetailProductFocheck(this.data.product_id),
+        getRelatedDetailProductFocheck(this.data.product_id),
+      ]);
+
       this.setData({
         product,
         relativeProducts,
+        productFoCheck,
+        relativeProductsFoCheck,
         isLoading: false,
         colorSelected: product.colors[0],
         sizeSelected: product.sizes[0],
       });
+      console.log(this.data)
     } catch (error) {
       this.setData({
         isLoading: false,

@@ -180,14 +180,15 @@ export const getProductNearYourAeraAPI = () => {
 export const getDetailProductFocheck = async (productId) => {
   const data = product;
   const pdb = data.find((p) => p.id == productId);
-  const pdRelate = data.find((p) =>
-    removeAccents(p.category).includes(removeAccents(productId))
-  );
-
-  const result = {
-    ...pdb,
-    ...pdRelate,
-  };
-  return result;
+  return pdb;
 };
 
+export const getRelatedDetailProductFocheck = async (productId) => {
+  const data = product;
+  const pdb = data.find((p) => p.id == productId);
+  const pdRelate = data.filter((p) =>
+    removeAccents(p.category).includes(removeAccents(pdb.category))
+  );
+
+  return pdRelate;
+};
