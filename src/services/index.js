@@ -1,5 +1,6 @@
 import request, { fakeRequest } from "./request";
-import nearAeraProduct from './mock/near-aera-products.json'
+import nearAeraProduct from './mock/near-aera-products.json';
+import favoritesProduct from './mock/favorite-products.json';
 
 export const getShopInfoAPI = () => {
   return request({ path: "/shop" });
@@ -162,7 +163,8 @@ export const getRelativeProductsAPI = () => {
 };
 
 export const getFavoritesProductAPI = () => {
-  return request({ path: "/favorite-products" });
+  return favoritesProduct
+  // return request({ path: "/favorite-products" });
 };
 
 export const getProductNearYourAeraAPI = () => {

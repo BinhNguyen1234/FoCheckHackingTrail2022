@@ -6,6 +6,7 @@ import {
   getBannersAPI,
   getHotDealProductsAPI,
   getProductNearYourAeraAPI,
+  getFavoritesProductAPI,
 } from "../../services/index";
 import { group } from "../../utils/common";
 import {
@@ -26,7 +27,8 @@ Page({
     newProducts: [],
     banners: [],
     hotDealProducts: [],
-    nearAeraProducts: []
+    nearAeraProducts: [],
+    favoriteProducts: [],
   },
 
   onTapProduct(product) {
@@ -51,6 +53,7 @@ Page({
         banners,
         hotDealProducts,
         nearAeraProducts,
+        favoriteProducts,
       ] = await Promise.all([
         getShopInfoAPI(),
         getCategoriesAPI(),
@@ -59,6 +62,7 @@ Page({
         getBannersAPI(),
         getHotDealProductsAPI(),
         getProductNearYourAeraAPI(),
+        getFavoritesProductAPI(),
       ]);
 
       this.setData({
@@ -69,9 +73,9 @@ Page({
         hotDealProducts,
         categories: group(categories, 8),
         isLoading: false,
-        nearAeraProducts
+        nearAeraProducts: group(nearAeraProducts, 8),
+        favoriteProducts,
       });
-
     } catch {
       this.setData({
         isLoading: false,

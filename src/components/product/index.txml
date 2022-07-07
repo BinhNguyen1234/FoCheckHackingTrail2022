@@ -12,13 +12,13 @@
   >
     <image
       class="radius-8px mb-2x-small radius-8px"
-      src="{{product.thumbnail}}"
+      src="{{product.product.image}}"
     />
     <text
       class="mb-4x-small"
       number-of-lines="{{1}}"
     >
-      {{product.name}}
+      {{product.product.category}}, {{product.product.information}}
     </text>
     <view class="flex items-center">
       <text

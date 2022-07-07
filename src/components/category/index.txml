@@ -22,8 +22,14 @@
         class="category-name text-center"
         number-of-lines="{{3}}"
       >
-        {{category.name}}
+        {{category.category}}
       </text>
+      <text
+      class="category-name text-center"
+      number-of-lines="{{3}}"
+    >
+      {{category.warehouseAddress.toUpperCase()}}
+    </text>
     </view>
   </template>
   

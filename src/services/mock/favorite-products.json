@@ -1,6 +1,36 @@
-{
-  "name": "User name",
-  "avt": "/assets/images/logo.png",
-  "coupons" : 69,
-  "points" : 420
-}
+[
+  {
+    "id": "1",
+    "customerId": "1",
+    "isFavorite": true,
+    "productId": "1",
+    "product": {
+      "id": 1,
+      "businessId": "1",
+      "mfg": "10/10/2022",
+      "importDay": "15/10/2022",
+      "outOfDay": "10/11/2022",
+      "warehouseAddress": "hcm",
+      "category": "Chuối",
+      "image": "https://vinmec-prod.s3.amazonaws.com/images/20200228_160853_122084_chuoi.max-1800x1800.jpg",
+      "information": "Sạch"
+    }
+  },
+  {
+    "id": "2",
+    "customerId": "1",
+    "isFavorite": true,
+    "productId": "2",
+    "product": {
+      "id": "2",
+      "businessId": "2",
+      "mfg": "10/10/2022",
+      "importDay": "15/10/2022",
+      "outOfDay": "10/11/2022",
+      "warehouseAddress": "hcm",
+      "category": "Bơ",
+      "image": "https://cdn.eva.vn/upload/2-2019/images/2019-04-17/qua-bo-19-tac-dung-tuyet-voi-voi-suc-khoe-co-the-ban-chua-ngo-qua_bo-1555465654-143-width600height450.jpg",
+      "information": "Sạch"
+    }
+  }
+]

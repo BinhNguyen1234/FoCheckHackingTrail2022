@@ -22,7 +22,7 @@
         className="home-hot-deals"
         isLoading="{{isLoading}}"
         skeletons="{{4}}"
-        products="{{hotDealProducts}}"
+        products="{{favoriteProducts}}"
         onTapProduct="onTapProduct"
       />
     </view>
@@ -33,9 +33,9 @@
         onTapActionButton="goToCategory"
       />
       <category-carousel
-        class="{{isLoading || categories.length > 1 ? 'home-category-multiple' : ''}}"
+        class="{{isLoading || nearAeraProducts.length > 1 ? 'home-category-multiple' : ''}}"
         isLoading="{{isLoading}}"
-        categories="{{categories}}"
+        categories="{{nearAeraProducts}}"
         onTapCategory="goToCategoryDetail"
       />
     </view>
