@@ -1,0 +1,23 @@
+.product-section-vertical {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 20px;
+}
+
+.product-section-horizontal {
+  display: flex;
+  overflow-x: auto;
+}
+
+.product-section-horizontal .product {
+  margin-left: 16px;
+}
+
+.product-section-horizontal .product:last-child {
+  padding-right: 16px;
+}
+
+.product-section-horizontal .product > view {
+  width: calc(100vw / 2.9);
+}

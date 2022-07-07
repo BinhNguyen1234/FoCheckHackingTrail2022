@@ -1,0 +1,12 @@
+{
+  "name": "focheck-001",
+  "version": "0.1.0",
+  "tiki": {
+    "appIdentifier": "vn.tiki.miniapp.focheckvn",
+    "buildNumber": 1
+  },
+  "dependencies": {
+    "@tiki.vn/tini-ui": "0.10.0",
+    "query-string": "^7.0.1"
+  }
+}

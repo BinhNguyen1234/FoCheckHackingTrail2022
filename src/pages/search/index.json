@@ -1,0 +1,14 @@
+{
+  "defaultTitle": "Search",
+  "titleBarBottomColor": "transparent",
+  "usingComponents": {
+    "search-bar": "components/search-bar/index",
+    "category-section": "components/category-section/index",
+    "product-section": "components/product-section/index",
+    "empty": "components/empty/index",
+    "filter": "components/filter/index",
+    "filtered-list": "components/filtered-list/index",
+    "sort": "components/sort/index",
+    "recent-search": "components/recent-search/index"
+  }
+}

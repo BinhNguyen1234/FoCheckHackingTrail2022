@@ -1,0 +1,43 @@
+<view tiki:if="{{!initHome}}" class="home-init">
+  <view class="loading"></view>
+</view>
+<view tiki:else>
+  <view tiki:if="{{isFirstOpen}}">
+    <onboarding onDone="onDone" />
+  </view>
+
+  <view tiki:else>
+    <banners
+      class="home-banners"
+      isLoading="{{isLoading}}"
+      banners="{{banners}}"
+    />
+
+    <view class="home-section">
+      <section-title
+        title="Favorites"
+      />
+      <product-section
+        type="horizontal"
+        className="home-hot-deals"
+        isLoading="{{isLoading}}"
+        skeletons="{{4}}"
+        products="{{hotDealProducts}}"
+        onTapProduct="onTapProduct"
+      />
+    </view>
+
+    <view class="home-section home-category">
+      <section-title
+        title="Near your eara"
+        onTapActionButton="goToCategory"
+      />
+      <category-carousel
+        class="{{isLoading || categories.length > 1 ? 'home-category-multiple' : ''}}"
+        isLoading="{{isLoading}}"
+        categories="{{categories}}"
+        onTapCategory="goToCategoryDetail"
+      />
+    </view>
+  </view>
+</view>
