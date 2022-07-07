@@ -33,3 +33,27 @@ export const parseNumberFromMoney = (money) => {
 export const isObjectEqual = (obj1, obj2) => {
   return JSON.stringify(obj1) === JSON.stringify(obj2);
 };
+
+export const removeAccents = (str) => {
+  const AccentsMap = [
+    "aàảãáạăằẳẵắặâầẩẫấậ",
+    "AÀẢÃÁẠĂẰẲẴẮẶÂẦẨẪẤẬ",
+    "dđ", "DĐ",
+    "eèẻẽéẹêềểễếệ",
+    "EÈẺẼÉẸÊỀỂỄẾỆ",
+    "iìỉĩíị",
+    "IÌỈĨÍỊ",
+    "oòỏõóọôồổỗốộơờởỡớợ",
+    "OÒỎÕÓỌÔỒỔỖỐỘƠỜỞỠỚỢ",
+    "uùủũúụưừửữứự",
+    "UÙỦŨÚỤƯỪỬỮỨỰ",
+    "yỳỷỹýỵ",
+    "YỲỶỸÝỴ"    
+  ];
+  for (const i=0; i<AccentsMap.length; i++) {
+    const re = new RegExp('[' + AccentsMap[i].substr(1) + ']', 'g');
+    const char = AccentsMap[i][0];
+    str = str.replace(re, char);
+  }
+  return str;
+}
