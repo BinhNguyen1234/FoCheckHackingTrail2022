@@ -1,10 +1,15 @@
-import { getDetailProduct, getRelativeProductsAPI, getRelatedDetailProductFocheck, getDetailProductFocheck} from '../../services/index';
+import {
+  getDetailProduct,
+  getRelativeProductsAPI,
+  getRelatedDetailProductFocheck,
+  getDetailProductFocheck,
+} from "../../services/index";
 import {
   navigateToPDP,
   navigateToCart,
   loadBadgeCart,
-} from '../../utils/navigate';
-import queryString from 'query-string';
+} from "../../utils/navigate";
+import queryString from "query-string";
 
 const app = getApp();
 
@@ -12,25 +17,25 @@ Page({
   data: {
     isShowOption: false,
     isLoading: true,
-    product_id: '',
+    product_id: "",
     product: {},
     relativeProducts: [],
     productFoCheck: {},
     relativeProductsFoCheck: [],
-    type: 'color',
+    type: "color",
     colorSelected: {
-      id: '',
-      color: '',
-      image: '',
+      id: "",
+      color: "",
+      image: "",
     },
     sizeSelected: {
-      id: '',
-      size: '',
+      id: "",
+      size: "",
     },
     toast: {
       isShow: false,
-      content: '',
-      showAt: '',
+      content: "",
+      showAt: "",
     },
   },
 
@@ -52,8 +57,8 @@ Page({
     this.setData({
       toast: {
         isShow: false,
-        content: '',
-        showAt: '',
+        content: "",
+        showAt: "",
       },
     });
   },
@@ -66,14 +71,14 @@ Page({
 
   onSelectColor() {
     this.setData({
-      type: 'color',
+      type: "color",
       isShowOption: true,
     });
   },
 
   onSelectSize() {
     this.setData({
-      type: 'size',
+      type: "size",
       isShowOption: true,
     });
   },
@@ -87,7 +92,7 @@ Page({
   onDoneOption(option) {
     const { type } = this.data;
 
-    if (type === 'color') {
+    if (type === "color") {
       this.setData({
         colorSelected: option,
         isShowOption: false,
@@ -115,10 +120,9 @@ Page({
         getRelativeProductsAPI(),
       ]);
 
-      const [productFoCheck, relativeProductsFoCheck] = await Promise.all([
-        getDetailProductFocheck(this.data.product_id),
-        getRelatedDetailProductFocheck(this.data.product_id),
-      ]);
+      const productFoCheck = await getDetailProductFocheck(this.data.product_id)
+      console.log(productFoCheck)
+      const relativeProductsFoCheck = await getRelatedDetailProductFocheck(this.data.product_id)
 
       this.setData({
         product,
@@ -129,7 +133,6 @@ Page({
         colorSelected: product.colors[0],
         sizeSelected: product.sizes[0],
       });
-      console.log(this.data)
     } catch (error) {
       this.setData({
         isLoading: false,
@@ -140,7 +143,7 @@ Page({
   addAndGoToCart() {
     app.addProduct(this.data.product);
     loadBadgeCart();
-    my.navigateTo({ url: 'pages/cart/index' });
+    my.navigateTo({ url: "pages/cart/index" });
   },
 
   // Life cycle

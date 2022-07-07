@@ -186,9 +186,7 @@ export const getDetailProductFocheck = async (productId) => {
 export const getRelatedDetailProductFocheck = async (productId) => {
   const data = product;
   const pdb = data.find((p) => p.id == productId);
-  const pdRelate = data.filter((p) =>
-    removeAccents(p.category).includes(removeAccents(pdb.category))
-  );
+  const pdRelate = data.filter((p) => p.category.includes(pdb.category));
 
   return pdRelate;
 };
