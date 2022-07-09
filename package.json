@@ -1,12 +1,20 @@
 {
-  "name": "focheck-001",
-  "version": "0.1.0",
+  "name": "fo-check",
+  "version": "1.0.6",
   "tiki": {
-    "appIdentifier": "vn.tiki.miniapp.focheckvn",
-    "buildNumber": 1
+    "appIdentifier": "vn.tiki.miniapp.FoCheck",
+    "buildNumber": 5,
+    "metadata": {
+      "permissions": [
+        "isFollowingSeller",
+        "followSeller",
+        "unfollowSeller"
+      ]
+    }
   },
   "dependencies": {
-    "@tiki.vn/tini-ui": "0.10.0",
+    "@tiki.vn/mini-html-parser2": "^0.0.4",
+    "@tiki.vn/tini-ui": "0.10.1-rc.4",
     "query-string": "^7.0.1"
   }
 }
