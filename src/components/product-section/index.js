@@ -10,6 +10,7 @@ Component({
 
   methods: {
     _onTapProduct(product) {
+      console.log(this.props)
       this.props.onTapProduct(product);
     },
   },

@@ -9,14 +9,16 @@
     "pages/detail/index",
     "pages/order-detail/index",
     "pages/order-management/index",
-    "pages/tracking-detail/index",
     "pages/my-coupon/index",
     "pages/my-point/index",
     "pages/search/index",
     "pages/category/index",
     "pages/category-detail/index",
     "pages/product/index",
-    "pages/history/index"
+    "pages/history/index",
+    "pages/qr/index",
+    "pages/all-product/index",
+    "pages/all-products/index"
   ],
   "tabBar": {
     "borderTopActiveColor": "#1A94FF",
@@ -30,7 +32,7 @@
       },
       {
         "name": "QR",
-        "pagePath": "pages/category/index",
+        "pagePath": "pages/qr/index",
         "icon": "/assets/icons/tab-category.png",
         "activeIcon": "assets/icons/tab-category-active.png"
       },

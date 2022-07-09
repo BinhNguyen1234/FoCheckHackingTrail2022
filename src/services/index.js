@@ -3,7 +3,7 @@ import nearAeraProduct from "./mock/near-aera-products.json";
 import favoritesProduct from "./mock/favorite-products.json";
 import banners from "./mock/banners.json";
 import product from "./mock/productsFocheck.json";
-import { removeAccents } from "../utils/common";
+import { removeVietnameseTones } from "../utils/common";
 
 export const getShopInfoAPI = () => {
   return request({ path: "/shop" });
@@ -159,6 +159,30 @@ export const filterSortProductsAPI = async ({ filters, sort, search = "" }) => {
   return result;
 };
 
+export const searchProductsFoCheckAPI = async ({ filters, search = "" }) => {
+  const products = product;
+  console.log(products);
+  let result = [...products];
+
+  if (filters.rate)
+    result = result.filter((p) =>
+      p.rate.toLowerCase().includes(filters.rate.toLowerCase())
+    );
+
+  if (search)
+    result = result.filter(
+      (p) =>{
+        const convertSearch = removeVietnameseTones(search)
+        console.log(convertSearch)
+        return removeVietnameseTones(p.category).includes(convertSearch) ||
+        removeVietnameseTones(p.warehouseAddress).includes(convertSearch)
+      }
+    );
+
+  console.log(result)
+  return result;
+};
+
 export const getOtherProductsAPI = () => {
   return request({ path: "/other-products" });
 };
@@ -189,4 +213,9 @@ export const getRelatedDetailProductFocheck = async (productId) => {
   const pdRelate = data.filter((p) => p.category.includes(pdb.category));
 
   return pdRelate;
+};
+
+export const getProductFocheck = () => {
+  const data = product;
+  return data;
 };

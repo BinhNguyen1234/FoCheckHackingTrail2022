@@ -84,9 +84,7 @@ Page({
   },
 
   goToCategory() {
-    my.switchTab({
-      url: "pages/category/index",
-    });
+    my.navigateTo({ url: "pages/all-products/index" });
   },
 
   goToCategoryDetail(category) {

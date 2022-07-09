@@ -1,0 +1,5 @@
+<view>
+  <view class="block-content">
+    <button class="button-full" onTap="onScan">Start Scan</button>
+  </view>
+</view>

@@ -3,6 +3,7 @@ import {
   getRelativeProductsAPI,
   getRelatedDetailProductFocheck,
   getDetailProductFocheck,
+  getProductFocheck
 } from "../../services/index";
 import {
   navigateToPDP,
@@ -113,7 +114,7 @@ Page({
     });
 
     try {
-      const product = await getDetailProductFocheck(this.data.product_id);
+      const product = await getProductFocheck();
       const relativeProducts = await getRelatedDetailProductFocheck(
         this.data.product_id
       );
@@ -155,6 +156,7 @@ Page({
     });
   },
   onReady() {
+    console.log(1)
     this.loadData();
   },
 

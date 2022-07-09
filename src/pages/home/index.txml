@@ -15,7 +15,8 @@
 
     <view class="home-section">
       <section-title
-        title="Favorites"
+        title="Sản phẩm ưu thích"
+        onTapActionButton="goToCategory"
       />
       <product-section
         type="horizontal"
@@ -29,14 +30,14 @@
 
     <view class="home-section home-category">
       <section-title
-        title="Near your eara"
+        title="Sản phẩm xung quanh bạn"
         onTapActionButton="goToCategory"
       />
       <category-carousel
         class="{{isLoading || nearAeraProducts.length > 1 ? 'home-category-multiple' : ''}}"
         isLoading="{{isLoading}}"
         categories="{{nearAeraProducts}}"
-        onTapCategory="goToCategoryDetail"
+        onTapCategory="onTapProduct"
       />
     </view>
   </view>

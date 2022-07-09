@@ -29,14 +29,6 @@
             selectedFilters="{{selectedFilters}}"
             onSelect="onSelectFilter"
           />
-          <sort
-            isShow="{{isShowSort}}"
-            onClose="hideSort"
-            onShow="showSort"
-            sorts="{{sorts}}"
-            selectedSort="{{selectedSort}}"
-            onSelect="onSelectSort"
-          />
         </view>
 
         <filtered-list
@@ -68,7 +60,7 @@
   <view 
     tiki:if="{{!searchTerm}}"
     class="py-medium bg-white mb-2x-small">
-    <view class="px-medium pb-small text-medium font-bold">Popular category</view>
+    <view class="px-medium pb-small text-medium font-bold">Sản phẩm nổi tiếng</view>
     <category-section
       isLoading="{{isLoading}}"
       className="search-category-list"

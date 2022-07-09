@@ -19,7 +19,7 @@ Component({
         start: null,
         end: null,
       },
-      size: null,
+      rate: null,
       type: null,
       color: null,
     },
@@ -35,7 +35,7 @@ Component({
         start: null,
         end: null,
       },
-      size: null,
+      rate: null,
       type: null,
       color: null,
     },
@@ -52,6 +52,7 @@ Component({
 
     _onSelect() {
       this._onClose();
+      console.log(this.data)
       this.props.onSelect(this.data._selectedFilters);
     },
 
@@ -63,7 +64,7 @@ Component({
             start: null,
             end: null,
           },
-          size: null,
+          rate: null,
           type: null,
           color: null,
         },
@@ -82,13 +83,15 @@ Component({
     onSelectSize(event) {
       const { item } = event.target.dataset;
       const data = { ...this.data };
-      data._selectedFilters.size = item;
+      data._selectedFilters.rate = item;
+      console.log(this.data)
       this.setData(data);
     },
 
     onSelectType(event) {
       const { item } = event.target.dataset;
       const data = { ...this.data };
+      console.log(data)
       data._selectedFilters.type = item;
       this.setData(data);
     },

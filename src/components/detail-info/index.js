@@ -2,21 +2,29 @@ Component({
   data: {
     rows: [
       {
-        key: 'madeIn',
-        value: 'Made In',
+        key: 'mfg',
+        value: 'Ngày sản xuất',
       },
       {
-        key: 'size',
-        value: 'Size',
+        key: 'importDay',
+        value: 'Ngày nhập kho',
       },
       {
-        key: 'color',
-        value: 'Color',
+        key: 'outOfDay',
+        value: 'Hạn sử dụng',
       },
       {
-        key: 'material',
-        value: 'Material',
+        key: 'warehouseAddress',
+        value: 'Địa chỉ kho',
       },
+      {
+        key: 'information',
+        value: 'Thông tin',
+      },
+      {
+        key: 'provider',
+        value: 'Nhà cung cấp',
+      }
     ],
   },
   props: {
@@ -34,6 +42,7 @@ Component({
   },
   methods: {
     _onSwitchView() {
+      console.log(this.props)
       this.setData({
         viewMore: !this.data.viewMore,
       });

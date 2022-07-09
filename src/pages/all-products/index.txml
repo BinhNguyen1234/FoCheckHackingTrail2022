@@ -1,0 +1,9 @@
+<view class="p-medium bg-white mb-2x-small">
+  <view class="mb-small font-bold text-medium">Tất cả sản phẩm</view>
+  <product-section
+    isLoading="{{isLoading}}"
+    skeletons="{{4}}"
+    products="{{product}}"
+    onTapProduct="onTapProduct"
+  />
+</view>
