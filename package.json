@@ -1,9 +1,9 @@
 {
   "name": "fo-check",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "tiki": {
     "appIdentifier": "vn.tiki.miniapp.FoCheck",
-    "buildNumber": 5,
+    "buildNumber": 2,
     "metadata": {
       "permissions": [
         "isFollowingSeller",
