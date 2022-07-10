@@ -1,6 +1,6 @@
 Component({
   props: {
-    title: '',
+    title: 'FoCheck',
     onTapActionButton: () => {},
   },
 

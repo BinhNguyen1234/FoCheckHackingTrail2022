@@ -5,7 +5,7 @@
     <view class="text-medium font-bold">Order tracking</view>
     <view onTap="onMoveTrackingDetail" class="flex">
       <view class="text-blue mr-2x-small">View detail</view>
-      <icon type="arrow_right" color="#1A94FF"/>
+      <icon type="arrow_right" color="#00AB56"/>
     </view>
   </view>
 

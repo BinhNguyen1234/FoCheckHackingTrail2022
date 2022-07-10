@@ -8,9 +8,8 @@ Page({
       success: (res) => {
         const content = res.toString()
         my.alert({
-          title: 'Found',
-          content: content,
-          buttonText: 'Alert Button',
+          title: 'Đã tìm thấy',
+          buttonText: 'Xem chi tiết',
           success: () => {
             console.log('Success');
             navigateToPDP(content)

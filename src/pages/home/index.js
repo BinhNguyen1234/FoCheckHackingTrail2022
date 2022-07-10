@@ -96,7 +96,8 @@ Page({
 
   setTitle() {
     my.setNavigationBar({
-      title: "Shop Name",
+      titleBarColor: "#00AB56",
+      title: "FoCheck",
     });
   },
 
